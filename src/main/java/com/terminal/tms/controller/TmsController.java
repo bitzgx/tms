@@ -20,6 +20,24 @@ public class TmsController {
 		return tmsRepository.findAll();
 	}
 	
-	@RequestMapping("/{id}")
+	@RequestMapping("/addtms/{id}")
+	public Tms addTms (Tms tms) {
+		return tmsRepository.save(tms);
+	}
 	
+	@RequestMapping("/showtms/{id}")
+	public String showTms() {
+		return "";
+	}
+	
+	@RequestMapping("/updatetms/{id}")
+	public String updateTms() {
+		return "";
+	}
+	
+	@RequestMapping("/deletetms/{id}")
+	public String deleteTms() {
+		return "";
+	}
+
 }
