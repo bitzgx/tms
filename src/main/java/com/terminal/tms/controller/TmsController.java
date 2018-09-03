@@ -23,24 +23,25 @@ public class TmsController {
 		return tmsRepository.findAll();
 	}
 	
-	@RequestMapping("/addtms/{id}")
+	@RequestMapping("/addtms")
 	public Tms addTms (Tms tms) {
 		return tmsRepository.save(tms);
 	}
 	
 	@RequestMapping("/showtms/{id}")
-	public String showTms(@PathVariable String id, Model model) {
-		return "";
+	public TmsRepository showTms(@PathVariable Long id, Model model) {
+		model.addAttribute("tms", tmsRepository.findById(id));
+		return tmsRepository;
 	}
 	
 	@RequestMapping("/updatetms/{id}")
-	public String updateTms() {
-		return "";
+	public TmsRepository updateTms(@PathVariable Long tmsId) {
+		return tmsRepository;
 	}
 	
 	@RequestMapping("/deletetms/{id}")
-	public String deleteTms(@RequestBody String id) {
-		return "";
+	public TmsRepository deleteTms(@RequestBody String id) {
+		return tmsRepository;
 	}
 
 }
