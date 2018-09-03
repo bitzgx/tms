@@ -3,6 +3,9 @@ package com.terminal.tms.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -26,7 +29,7 @@ public class TmsController {
 	}
 	
 	@RequestMapping("/showtms/{id}")
-	public String showTms() {
+	public String showTms(@PathVariable String id, Model model) {
 		return "";
 	}
 	
@@ -36,7 +39,7 @@ public class TmsController {
 	}
 	
 	@RequestMapping("/deletetms/{id}")
-	public String deleteTms() {
+	public String deleteTms(@RequestBody String id) {
 		return "";
 	}
 
